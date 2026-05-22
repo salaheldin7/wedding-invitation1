@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Premium Wedding Invitation
 
-## Getting Started
+A cinematic, bilingual (English/Arabic) wedding invitation built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
 
-First, run the development server:
+## Highlights
+
+- Cinematic intro sequence with monogram, card reveal, and envelope animation
+- Bilingual layout with RTL support and Arabic typography
+- Live countdown to 21 August 2026
+- Frontend-only RSVP form (Google Sheets via Apps Script)
+- Auto-start music with mute control
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Audio: place your track at `public/audio/ahwak.mp3` or update the source in `src/app/page.tsx`
+- RSVP: set `NEXT_PUBLIC_RSVP_ENDPOINT` in `.env.local`
+- Monogram initials: update the text in `src/components/intro/MonogramScene.tsx` and `src/components/intro/EnvelopeScene.tsx`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## RSVP to Google Sheets
 
-## Learn More
+Create a Google Sheet, open Apps Script, and paste this handler:
 
-To learn more about Next.js, take a look at the following resources:
+```js
+function doPost(e) {
+	const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("RSVP");
+	const data = JSON.parse(e.postData.contents);
+	sheet.appendRow([
+		new Date(),
+		data.name,
+		data.attendance,
+		data.guests,
+		data.message,
+	]);
+	return ContentService.createTextOutput(JSON.stringify({ ok: true }))
+		.setMimeType(ContentService.MimeType.JSON)
+		.setHeader("Access-Control-Allow-Origin", "*");
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Deploy it as a Web App and set the deployment URL in `.env.local`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+NEXT_PUBLIC_RSVP_ENDPOINT=YOUR_WEB_APP_URL
+```
 
-## Deploy on Vercel
+## Notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Animations respect the user's reduced motion setting.
+- Designed mobile-first; test on iPhone aspect ratios.

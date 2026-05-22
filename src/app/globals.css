@@ -1,26 +1,149 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --wine: #5b0f1a;
+  --ivory: #f7f1e8;
+  --paper: #fdf8f1;
+  --gold: #c7a46a;
+  --ink: #14090c;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-wine: var(--wine);
+  --color-ivory: var(--ivory);
+  --color-paper: var(--paper);
+  --color-gold: var(--gold);
+  --color-ink: var(--ink);
+  --font-display: var(--font-display-var);
+  --font-body: var(--font-body-var);
+  --font-arabic: var(--font-arabic-var);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: #120607;
+  }
+
+  body {
+    min-height: 100%;
+    background: var(--wine);
+    color: #ffffff;
+    font-family: var(--font-body), serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), serif;
+  }
+
+  .font-body {
+    font-family: var(--font-body), serif;
+  }
+
+  .font-ar {
+    font-family: var(--font-arabic), serif;
+  }
+
+  .lux-bg {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.12), transparent 45%),
+      radial-gradient(circle at 80% 10%, rgba(199, 164, 106, 0.12), transparent 50%),
+      linear-gradient(180deg, #2a0b12 0%, #120607 55%, #0b0406 100%);
+  }
+
+  .card-ivory {
+    background: rgba(247, 241, 232, 0.92);
+    color: var(--wine);
+  }
+
+  .paper-texture {
+    background-image:
+      radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(120deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+    background-size: 18px 18px, 100% 100%;
+  }
+
+  .shadow-luxe {
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35), 0 6px 18px rgba(0, 0, 0, 0.2);
+  }
+
+  .glow {
+    box-shadow: 0 0 60px rgba(199, 164, 106, 0.18);
+  }
+
+  .btn-gold {
+    background: linear-gradient(135deg, #d6b57d, #b48a49);
+    color: #3b0b12;
+  }
+
+  .envelope-wrap {
+    position: relative;
+    width: min(320px, 80vw);
+    aspect-ratio: 3 / 2;
+    perspective: 1200px;
+  }
+
+  .envelope-back {
+    position: absolute;
+    inset: 0;
+    background: #f7f1e8;
+    border-radius: 18px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+  }
+
+  .envelope-front {
+    position: absolute;
+    inset: 0;
+    background: #f1e7da;
+    clip-path: polygon(0 0, 50% 45%, 100% 0, 100% 100%, 0 100%);
+    border-radius: 18px;
+    box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .envelope-flap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 60%;
+    background: #efe2d5;
+    clip-path: polygon(0 0, 50% 80%, 100% 0);
+    transform-origin: top center;
+    box-shadow: 0 18px 22px rgba(0, 0, 0, 0.08);
+  }
+
+  .invite-card {
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    bottom: 12%;
+    height: 72%;
+    border-radius: 14px;
+    background: #fffdf7;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+    background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 14px 14px;
+  }
+
+  .wax-seal {
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    transform: translate(-50%, -50%);
+    height: 56px;
+    width: 56px;
+    border-radius: 999px;
+    background: radial-gradient(circle at 30% 30%, #7b1624, #4b0e16);
+    box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.2),
+      0 14px 26px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
