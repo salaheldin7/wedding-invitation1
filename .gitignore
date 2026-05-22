@@ -20,6 +20,9 @@
 # production
 /build
 
+# media
+/2adeemo
+
 # misc
 .DS_Store
 *.pem
