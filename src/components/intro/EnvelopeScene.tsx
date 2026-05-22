@@ -14,25 +14,25 @@ export function EnvelopeScene() {
     timers.push(
       setTimeout(() => {
         sealRef.current?.classList.add("seal-break");
-      }, 4200)
+      }, 3600)
     );
 
     timers.push(
       setTimeout(() => {
         flapRef.current?.classList.add("flap-open");
-      }, 4700)
+      }, 4100)
     );
 
     timers.push(
       setTimeout(() => {
         cardRef.current?.classList.add("card-rise");
-      }, 5900)
+      }, 5200)
     );
 
     timers.push(
       setTimeout(() => {
         wrapRef.current?.classList.add("scene-out");
-      }, 9000)
+      }, 8200)
     );
 
     return () => timers.forEach(clearTimeout);

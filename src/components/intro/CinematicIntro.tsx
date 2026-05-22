@@ -3,11 +3,10 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { InvitationScene } from "./InvitationScene";
-import { MonogramScene } from "./MonogramScene";
 import { WhiteScene } from "./WhiteScene";
 import { EnvelopeScene } from "./EnvelopeScene";
 
-type Stage = "envelope" | "monogram" | "card" | "white";
+type Stage = "envelope" | "card" | "white";
 
 type CinematicIntroProps = {
   onComplete: () => void;
@@ -15,7 +14,6 @@ type CinematicIntroProps = {
 
 const sequence: Array<{ stage: Stage; duration: number }> = [
   { stage: "envelope", duration: 11200 },
-  { stage: "monogram", duration: 1600 },
   { stage: "card", duration: 3000 },
   { stage: "white", duration: 600 },
 ];
@@ -63,7 +61,6 @@ export function CinematicIntro({ onComplete }: CinematicIntroProps) {
           transition={{ duration: 1.2 }}
         >
           <AnimatePresence mode="wait">
-            {stage === "monogram" && <MonogramScene key="monogram" />}
             {stage === "card" && <InvitationScene key="card" />}
             {stage === "white" && <WhiteScene key="white" />}
             {stage === "envelope" && <EnvelopeScene key="envelope" />}
