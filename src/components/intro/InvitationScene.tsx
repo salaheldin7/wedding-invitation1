@@ -12,7 +12,7 @@ export function InvitationScene() {
       transition={{ duration: 1 }}
     >
       <motion.div
-        className="card-ivory w-[82vw] max-w-sm rounded-3xl p-8 text-center shadow-luxe paper-texture"
+        className="card-ivory card-type w-[82vw] max-w-sm rounded-3xl p-8 text-center shadow-luxe paper-texture"
         initial={{ y: 24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ opacity: 0, y: -12 }}
@@ -25,7 +25,10 @@ export function InvitationScene() {
           21 • 08 • 2026
         </div>
         <div className="mt-3 text-xs uppercase tracking-[0.35em] text-wine opacity-70">
-          Friday | الجمعة
+          Friday |{" "}
+          <span className="font-ar" dir="rtl">
+            الجمعة
+          </span>
         </div>
         <div
           className="mt-8 h-px w-full"

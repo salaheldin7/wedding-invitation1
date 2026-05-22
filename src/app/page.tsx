@@ -224,11 +224,15 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <div className="w-full max-w-sm rounded-3xl bg-gradient-to-b from-[#fffdf5] to-[#f8ecd7] px-7 py-9 shadow-[0_30px_80px_rgba(0,0,0,0.55),0_0_0_1px_rgba(212,175,80,0.25)] sm:max-w-md sm:px-10 sm:py-11">
+              <div className="card-type w-full max-w-sm rounded-3xl bg-gradient-to-b from-[#fffdf5] to-[#f8ecd7] px-7 py-9 shadow-[0_30px_80px_rgba(0,0,0,0.55),0_0_0_1px_rgba(212,175,80,0.25)] sm:max-w-md sm:px-10 sm:py-11">
 
                 <div className="mb-5 text-center">
                   <p className="mb-3 text-[9px] uppercase tracking-[0.5em] text-wine/40">
-                    ✦ Wedding Celebration · حفل زفاف ✦
+                    ✦ Wedding Celebration ·{" "}
+                    <span className="font-ar" dir="rtl">
+                      حفل زفاف
+                    </span>{" "}
+                    ✦
                   </p>
 
                   <h1 className="font-display text-4xl tracking-[0.28em] text-wine">
@@ -240,7 +244,7 @@ export default function Home() {
                   </p>
 
                   <p
-                    className="mt-2 text-[13px] font-medium tracking-[0.26em] text-wine/55"
+                    className="mt-2 text-[13px] font-medium tracking-[0.26em] text-wine/55 font-ar"
                     dir="rtl"
                   >
                     كريم يوسف · ندى هشام
@@ -259,7 +263,7 @@ export default function Home() {
                   </p>
 
                   <p
-                    className="mt-1 text-[9px] tracking-[0.3em] text-wine/50"
+                    className="mt-1 text-[9px] tracking-[0.3em] text-wine/50 font-ar"
                     dir="rtl"
                   >
                     الجمعة
@@ -271,7 +275,7 @@ export default function Home() {
                 <div className="my-5 space-y-1 text-center text-[13px] text-wine/75">
                   <p>From 7:00 PM till 12:00 AM</p>
 
-                  <p dir="rtl" className="text-[12px]">
+                  <p dir="rtl" className="text-[12px] font-ar">
                     من الساعة ٧ مساءً حتى ١٢ منتصف الليل
                   </p>
                 </div>
@@ -285,7 +289,7 @@ export default function Home() {
                     Katameya Dunes
                   </p>
 
-                  <p className="mt-2 text-[12px]" dir="rtl">
+                  <p className="mt-2 text-[12px] font-ar" dir="rtl">
                     فندق ويستن كايرو
                   </p>
                 </div>
@@ -298,7 +302,7 @@ export default function Home() {
                     you
                   </p>
 
-                  <p className="mt-2" dir="rtl">
+                  <p className="mt-2 font-ar" dir="rtl">
                     يشرفنا حضوركم ومشاركتكم فرحتنا
                   </p>
                 </div>
@@ -308,7 +312,7 @@ export default function Home() {
                 <div className="mt-5 text-center text-[11px] leading-relaxed text-wine/45">
                   <p>🚭 No smoking is allowed inside the hall</p>
 
-                  <p className="mt-1" dir="rtl">
+                  <p className="mt-1 font-ar" dir="rtl">
                     ممنوع التدخين داخل القاعة
                   </p>
                 </div>
