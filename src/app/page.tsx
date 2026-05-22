@@ -244,7 +244,7 @@ export default function Home() {
                   </p>
 
                   <p
-                    className="mt-2 text-[13px] font-medium tracking-[0.26em] text-wine/55 font-ar"
+                    className="mt-2 text-[13px] font-semibold tracking-[0.22em] text-wine/60 font-ar"
                     dir="rtl"
                   >
                     كريم يوسف · ندى هشام
