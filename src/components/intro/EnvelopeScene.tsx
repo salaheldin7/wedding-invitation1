@@ -569,7 +569,7 @@ export function EnvelopeScene() {
               <div className="card-inner">
                 <div className="eyebrow">Wedding Invitation</div>
 
-                <div className="mono">M & A</div>
+                <div className="mono">K & N</div>
 
                 <div className="date">21 · 08 · 2026</div>
               </div>
@@ -582,7 +582,7 @@ export function EnvelopeScene() {
 
             <div className="seal-container" ref={sealRef}>
               <div className="seal">
-                <span>M A</span>
+                <span>K N</span>
               </div>
             </div>
           </div>

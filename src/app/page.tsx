@@ -162,7 +162,7 @@ export default function Home() {
                 <div className="absolute inset-2 rounded-full border border-[rgba(212,175,80,0.12)]" />
 
                 <span className="font-display text-lg tracking-[0.45em] text-[#f0d080]">
-                  M A
+                  K N
                 </span>
               </div>
 
@@ -218,7 +218,7 @@ export default function Home() {
             <Reveal>
               <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[rgba(212,175,80,0.3)] bg-white/[0.03] shadow-[0_0_40px_rgba(199,164,106,0.14)]">
                 <span className="font-display text-sm tracking-[0.35em] text-[#f0d080]">
-                  M A
+                  K N
                 </span>
               </div>
             </Reveal>
@@ -232,8 +232,19 @@ export default function Home() {
                   </p>
 
                   <h1 className="font-display text-4xl tracking-[0.28em] text-wine">
-                    M & A
+                    K & N
                   </h1>
+
+                  <p className="mt-3 text-[12px] font-medium tracking-[0.34em] text-wine/60">
+                    Karim Youssef · Nada Hesham
+                  </p>
+
+                  <p
+                    className="mt-2 text-[13px] font-medium tracking-[0.26em] text-wine/55"
+                    dir="rtl"
+                  >
+                    كريم يوسف · ندى هشام
+                  </p>
                 </div>
 
                 <GoldDivider />
